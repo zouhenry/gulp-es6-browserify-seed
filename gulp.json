@@ -1,0 +1,23 @@
+{
+  "index"   : [
+    "app/index.html"
+  ],
+  "js"      : [
+    "app/module.js",
+    "app/**/*.js",
+    "app/main.js"
+  ],
+  "mainJs"  : "app/main.js",
+  "api"     : [
+    "app/api/*.json"
+  ],
+  "vendor"  : [
+    "bower_components/marked/lib/marked.js",
+    "bower_components/jquery/dist/jquery.js",
+    "bower_components/lodash/dist/lodash.js",
+    "bower_components/mithril/mithril.js"
+  ],
+  "dest"    : "./www/",
+  "destJs"  : "./www/js/",
+  "destApi" : "./www/api/"
+}
