@@ -1,0 +1,122 @@
+{
+  "excludeFiles"                           : [
+    "node_modules/**",
+    "src/common/bower_components/**",
+    "src/components/**/bower_components/**",
+    "src/app/bower_components/**"
+  ],
+  "requireCurlyBraces"                     : [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch"
+  ],
+  "requireOperatorBeforeLineBreak"         : true,
+  "requireCamelCaseOrUpperCaseIdentifiers" : true,
+  "requireSemicolons"                      : true,
+  "maximumLineLength"                      : {
+    "value"         : 175,
+    "allowComments" : true,
+    "allowRegex"    : true
+  },
+  "validateIndentation"                    : 2,
+  "validateParameterSeparator"             : ", ",
+  "disallowMultipleLineStrings"            : true,
+  "disallowMixedSpacesAndTabs"             : true,
+  "disallowTrailingWhitespace"             : true,
+  "disallowSpaceAfterPrefixUnaryOperators" : true,
+  "requireSpaceAfterKeywords"              : [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "switch",
+    "return",
+    "try",
+    "catch"
+  ],
+  "requireSpaceBeforeBinaryOperators"      : [
+    "=",
+    "+=",
+    "-=",
+    "*=",
+    "/=",
+    "%=",
+    "<<=",
+    ">>=",
+    ">>>=",
+    "&=",
+    "|=",
+    "^=",
+    "+=",
+    "+",
+    "-",
+    "*",
+    "/",
+    "%",
+    "<<",
+    ">>",
+    ">>>",
+    "&",
+    "|",
+    "^",
+    "&&",
+    "||",
+    "===",
+    "==",
+    ">=",
+    "<=",
+    "<",
+    ">",
+    "!=",
+    "!=="
+  ],
+  "requireSpaceAfterBinaryOperators"       : true,
+  "requireSpacesInConditionalExpression"   : true,
+  "requireSpaceBeforeBlockStatements"      : true,
+  "requireLineFeedAtFileEnd"               : true,
+  "requireSpacesInsideObjectBrackets"      : "all",
+  "disallowSpacesInsideArrayBrackets"      : "all",
+  "requireAlignedObjectValues"             : "all",
+  "disallowSpacesInCallExpression"         : true,
+  "disallowSpacesInsideParentheses"        : false,
+  "requireSpacesInsideParentheses"         : "all", //bug in Webstorm preventing this from working for IIFEs
+  "disallowSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "requireObjectKeysOnNewLine"             : {
+    "allExcept" : [
+      "sameLine"
+    ]
+  },
+  "jsDoc"                                  : {
+    "checkAnnotations" : {
+      "preset" : "jsdoc3",
+      "extra"  : {
+        "ngdoc"       : true,
+        "memberOf"    : true,
+        "description" : true,
+        "restrict"    : true,
+        "element"     : true,
+        "scope"       : true,
+        "namespace"   : true
+      }
+    }
+  },
+  "disallowMultipleLineBreaks"             : true,
+  "disallowCommaBeforeLineBreak"           : null,
+  "disallowDanglingUnderscores"            : null,
+  "disallowEmptyBlocks"                    : true,
+  "disallowTrailingComma"                  : true,
+  "requireCommaBeforeLineBreak"            : true,
+  "requireDotNotation"                     : true,
+  //  "disallowMultipleVarDecl"                : true,
+  "requireParenthesesAroundIIFE"           : true,
+  "disallowNestedTernaries"                : {
+    "maxLevel" : 1
+  }
+}
