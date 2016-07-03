@@ -1,51 +1,83 @@
-/**
- * Created by hzou on 7/2/16.
- */
-// Karma configuration
-var _             = require( 'lodash' );
-var webpackConfig = require( './webpack.config' );
-var webpackModule = { module: webpackConfig.module };
-
 module.exports = function( config ) {
   config.set( {
-    // ... normal karma configuration
-    browsers  : ['PhantomJS'],
+    basePath: '',
+
     frameworks: ['jasmine'],
-    reporters : ['progress', 'coverage'],
 
-    // optionally, configure the reporter
-    coverageReporter: {
-      type : 'text'
-    },
-
-    files: [
-      // all files ending in ".spec.js"
-      'src/vendor/vendor.js',
-      'src/app/app.js',
-      'src/app/**/*.spec.js'
-      // each file acts as entry point for the webpack configuration
-    ],
+    // list of files/patterns to load in the browser
+    files: ['spec.bundle.js'],
 
     preprocessors: {
-      // add webpack as preprocessor
-      'src/vendor/vendor.js': ['webpack'],
-      'src/app/app.js': ['webpack', 'sourcemap', 'coverage'],
-      'src/app/**/*.spec.js': ['webpack', 'sourcemap']
+      'spec.bundle.js': ['webpack', 'sourcemap']
     },
 
-    webpack: _.extend( webpackModule, {
-      // karma watches the test entry points
-      // (you don't need to specify the entry option)
-      // webpack watches dependencies
+    webpack: {
+      devtool: 'inline-source-map',
+      module : {
+        preLoaders: [{
+          test   : /\.js$/,
+          include: "src/",
+          exclude: [/node_modules/, /\.spec\.js/],
+          loader : 'babel'
+        }, {
+          test   : /\.js$/,
+          exclude: [/node_modules/, /\.spec\.js/],
+          loader : 'babel-istanbul'
+        }],
+        loaders   : [
+          {
+            test   : /\.js$/,
+            exclude: [/node_modules/],
+            loader : 'babel'
+          },
+          {
+            test   : /\.jade$/,
+            exclude: [/node_modules/],
+            loader : 'ng-cache!jade-html'
+          },
+          {
+            test  : /\.scss$/,
+            loader: 'style!css!sass!'
+          },
+          {
+            test  : /\.html$/,
+            loader: 'raw'
+          }, {
+            test  : /\.css$/,
+            loader: 'style!css'
+          }]
+      }
+    },
 
-      // webpack configuration
-      devtool: 'inline-source-map'
-    } ),
-
-    webpackMiddleware: {
-      // webpack-dev-middleware configuration
-      // i. e.
+    webpackServer: {
       noInfo: true
-    }
+    },
+
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['spec', 'coverage'],
+
+    coverageReporter: {
+      reporters: [{
+        type: 'html',
+        dir : 'coverage/'
+      }, {
+        type: 'text'
+      }]
+    },
+
+    // web server port
+    port: 12345,
+
+    // enable colors in the output
+    colors: true,
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_WARN,
+
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['PhantomJS']
+
   } );
 };

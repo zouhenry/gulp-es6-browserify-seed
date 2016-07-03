@@ -1,18 +1,38 @@
-#Angular ES6 Webpack Seed Project
-## Karma, Jasmine, PhantomJS, Istanbul (Coverage) 
+#gulp-es6-webpack-seed
+Angular ES6 Webpack Seed Project
+
+#
+
+## Tools / Frameworks Used
+- Angular 1.5
+- Webpack
+- Babel (transpilation)
+- Testing
+  - Karma
+  - Jasmine
+  - PhantomJS
+  - Istanbul (Coverage) 
 
 ##Getting started
 
-```bash
-# clone this project
-git clone https://github.com/zouhenry/gulp-es6-webpack-seed.git
-# install packages
-npm install
-# build and watch using webpack dev server
-npm start
-# test
-npm test
-# test with watch
-npm tdd
-```    
+ Assuming you already have node and npm installed...
+     
+ ```bash
+ # clone this project
+ git clone https://github.com/zouhenry/gulp-es6-webpack-seed.git
+ # cd into the project and install npm packages
+ npm install
+ ```
+ 
+ 
+ npm commands
+
+ ```bash
+ # build and watch using webpack dev server
+ npm start
+ # test (single-run)
+ npm test
+ # test (continuous watch)
+ npm tdd
+ ```
     

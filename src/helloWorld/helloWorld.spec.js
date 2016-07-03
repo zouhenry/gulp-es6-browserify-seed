@@ -2,7 +2,8 @@
  * Created by hzou on 7/2/16.
  */
 
-// import AppController from './app.controller';
+import module from './index';
+import template from './helloWorld.jade';
 
 // console.log( 'AppController.name:', AppController.name );
 describe( 'app.controller', ()=> {
