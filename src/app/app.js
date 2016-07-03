@@ -4,6 +4,7 @@
 
 import AppController from "./app.controller";
 
+export default
 angular
   .module( 'app', [] )
   .controller( "AppController", AppController );
